@@ -5,10 +5,10 @@
 </template>
 
 <script>
-export default {
-  props: {
-    text: "",
-    book: "",
-  },
-};
+  export default {
+    props: {
+      text: "",
+      book: Number, // String, Array, Object
+    },
+  };
 </script>
