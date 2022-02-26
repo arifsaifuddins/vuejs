@@ -3,17 +3,22 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      key: "hai",
-    };
-  },
-};
+  export default {
+    data() {
+      return {
+        key: "hai"
+      };
+    },
+    methods(()=> {
+      addcount(satu) {
+        return;
+      }
+    })
+  };
 </script>
 
 <style scoped>
-div {
-  color: blueviolet;
-}
+  div {
+    color: blueviolet;
+  }
 </style>
