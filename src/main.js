@@ -1,15 +1,25 @@
 import { createApp } from 'vue'
-import AppTodo from './AppTodo.vue'
-// import App from './App.vue'
-// import Child from './components/basic/module/Child.vue';
+// // app
 
+// import App from './App.vue'
+// createApp(App).mount('#app')
+
+// // option api
 // // global component
-// const app = createApp(App)
+
+// import ApiOption from './ApiOption.vue'
+// import Child from './components/optionapi/module/Child.vue';
+// const app = createApp(ApiOption)
 // app.component('child-component', Child)
 // app.mount('#app')
 
-// app
-// createApp(App).mount('#app')
 
-// todo
-createApp(AppTodo).mount('#app')
+// // todo option
+
+// import AppTodoOption from './AppTodoOption.vue'
+// createApp(AppTodoOption).mount('#app')
+
+// composition api
+
+import ApiComposition from './ApiComposition.vue';
+createApp(ApiComposition).mount('#app')
