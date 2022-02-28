@@ -23,29 +23,42 @@
 </template>
 
 <script>
-  import { computed } from "@vue/runtime-core";
-  import { mapActions, mapState, useStore } from "vuex";
+  import { mapActions, mapState } from "vuex";
+  // import { computed, onMounted } from "@vue/runtime-core";
+  // import { useStore } from "vuex";
 
   export default {
-    setup() {
-      const store = useStore();
+    // setup() {
+    //   const store = useStore();
+    //   const person = computed(() => {
+    //     return store.state.person;
+    //   });
+    //   return {
+    //     person,
+    //   };
+    // },
 
-      const person = computed(() => {
-        return store.state.person;
-      });
+    // // map state di option api
 
-      return {
-        person,
-      };
-    },
+    // // non modular
+    // computed: {
+    //   // sesuai nama di store
+    //   ...mapState(["person"]),
+    // },
+    // methods: {
+    //   ...mapActions(["getPerson"]),
+    // },
 
-    // map state di option api
+    // modular
     computed: {
-      // sesuai nama di store
-      ...mapState(["person"]),
+      ...mapState({
+        person: (state) => state.user.person,
+      }),
     },
     methods: {
-      ...mapActions(["getPerson"]),
+      ...mapActions({
+        getPerson: "user/getPerson",
+      }),
     },
   };
 </script>

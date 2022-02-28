@@ -40,50 +40,70 @@
 
 <script>
   import { computed, onMounted, ref } from "@vue/runtime-core";
-  import { mapGetters, mapMutations, mapState } from "vuex";
-  // import {  useStore } from "vuex";
+  import { mapGetters, mapMutations, mapState, useStore } from "vuex";
 
   export default {
-    // setup() {
+    setup() {
+      const store = useStore();
+      //   const name = ref("");
 
-    //   const store = useStore();
-    //   const name = ref("");
+      onMounted(() => {
+        store.dispatch("user/getPerson"); // modular
+      });
 
-    //   const likes = computed(() => {
-    //     return store.state.totalLike;
-    //   });
+      //  onMounted(() => {
+      //     store.dispatch("getPerson");
+      //   });
 
-    //   const fakeLikes = computed(() => {
-    //     return store.getters.fakeLikesSet;
-    //   });
+      //   const likes = computed(() => {
+      //     return store.state.totalLike;
+      //   });
 
-    //   onMounted(() => {
-    //     name.value = store.state.userName;
-    //   });
+      //   const fakeLikes = computed(() => {
+      //     return store.getters.fakeLikesSet;
+      //   });
 
-    //   onMounted(() => {
-    //     store.dispatch("getPerson");
-    //   });
+      //   onMounted(() => {
+      //     name.value = store.state.userName;
+      //   });
 
-    //   return { likes, name, fakeLikes };
-    // },
+      //   return { likes, name, fakeLikes };
+    },
 
     // map helper hanya bisa di option api
 
+    // // non modular
+    // computed: {
+    //   // sesuaikan nama di storenya state/ getter
+    //   ...mapState(["totalLike", "userName"]),
+
+    //   ...mapGetters(["fakeLikesSet"]),
+    //   // // kalo mau ubah nama sesuai keinginan
+    //   // ...mapState({
+    //   //   likes: 'totalLike'
+    //   // }),
+    // },
+
+    // methods: {
+    //   // sesuaikamn nama di store mutation
+    //   ...mapMutations(["addLike", "addUserName"]),
+    // },
+
+    // modular
     computed: {
-      // sesuaikan nama di storenya state/ getter
-      ...mapState(["totalLike", "userName"]),
-
-      ...mapGetters(["fakeLikesSet"]),
-      // // kalo mau ubah nama sesuai keinginan
-      // ...mapState({
-      //   likes: 'totalLike'
-      // }),
+      ...mapState({
+        totalLike: (state) => state.post.totalLike,
+        userName: (state) => state.user.userName,
+      }),
+      ...mapGetters({
+        fakeLikesSet: "post/fakeLikesSet",
+      }),
     },
-
     methods: {
-      // sesuaikamn nama di store mutation
-      ...mapMutations(["addLike", "addUserName"]),
+      ...mapMutations({
+        addLike: "post/addLike",
+        addUserName: "user/addUserName",
+      }),
     },
   };
 </script>

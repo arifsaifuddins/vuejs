@@ -23,7 +23,8 @@
       const store = useStore();
 
       const likePost = () => {
-        store.commit("addLike");
+        // store.commit("addLike");
+        store.commit("post/addLike"); //modular
       };
 
       const id = route.params.id;

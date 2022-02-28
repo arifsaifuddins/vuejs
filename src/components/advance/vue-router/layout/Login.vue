@@ -34,7 +34,10 @@
       const login = () => {
         localStorage.setItem("auth", true);
 
-        store.commit("addUserName", username.value);
+        // modules
+        store.commit("user/addUserName", username.value);
+
+        // store.commit("addUserName", username.value);
         route.push("/");
       };
 
