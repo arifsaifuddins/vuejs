@@ -19,7 +19,14 @@ import { createApp } from 'vue'
 // import AppTodoOption from './AppTodoOption.vue'
 // createApp(AppTodoOption).mount('#app')
 
-// composition api
+// // composition api
 
-import ApiComposition from './ApiComposition.vue';
-createApp(ApiComposition).mount('#app')
+// import ApiComposition from './ApiComposition.vue';
+// createApp(ApiComposition).mount('#app')
+
+// advance vue
+
+import Advance from './Advance.vue'
+import router from './components/advance/vue-router/Routes'
+
+createApp(Advance).use(router).mount('#app')
