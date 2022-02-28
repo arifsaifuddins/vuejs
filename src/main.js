@@ -28,5 +28,9 @@ import { createApp } from 'vue'
 
 import Advance from './Advance.vue'
 import router from './components/advance/vue-router/Routes'
+import store from './components/advance/vuex/Store.js'
 
-createApp(Advance).use(router).mount('#app')
+createApp(Advance)
+  .use(store)
+  .use(router)
+  .mount('#app')
