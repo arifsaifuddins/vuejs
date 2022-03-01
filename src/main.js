@@ -30,7 +30,11 @@ import Advance from './Advance.vue'
 import router from './components/advance/vue-router/Routes'
 import store from './components/advance/vuex/Store.js'
 
+// pinia 
+import { createPinia } from 'pinia'
+
 createApp(Advance)
   .use(store)
   .use(router)
+  .use(createPinia())
   .mount('#app')

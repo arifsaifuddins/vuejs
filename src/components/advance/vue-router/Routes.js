@@ -8,6 +8,7 @@ import Posts from './pages/Posts.vue'
 import Post from './pages/Post.vue'
 import About from './pages/About.vue'
 import Contact from './pages/Contact.vue'
+import Pinia from '../../pinia/PagePinia.vue'
 
 const routes = [
   {
@@ -47,6 +48,11 @@ const routes = [
         path: '/contact',
         name: 'Contact',
         component: Contact
+      },
+      {
+        path: '/pinia',
+        name: 'Pinia',
+        component: Pinia
       },
     ]
   },

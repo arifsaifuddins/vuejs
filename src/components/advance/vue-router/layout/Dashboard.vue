@@ -15,6 +15,9 @@
       <router-link :to="{ name: 'Contact' }" class="nav-item btn btn-info"
         >Contact
       </router-link>
+      <router-link :to="{ name: 'Pinia' }" class="nav-item ms-2 btn btn-dark"
+        >Pinia
+      </router-link>
       <div @click="logout" class="ms-2 nav-item btn btn-danger">Log Out</div>
     </div>
   </ul>
