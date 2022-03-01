@@ -20,9 +20,9 @@
     <div class="btn-success text-center d-block btn mx-auto">
       You have likes : {{ totalLike }}
     </div>
-    <div class="btn-info mt-2 text-center d-block btn mx-auto">
+    <!-- <div class="btn-info mt-2 text-center d-block btn mx-auto">
       You have fake likes : {{ fakeLikesSet }}
-    </div>
+    </div> -->
   </div>
 
   <div class="col-lg-2 mx-auto mb-5">
@@ -51,12 +51,12 @@
         store.dispatch("user/getPerson"); // modular
       });
 
+      // const likes = computed(() => {
+      //   return store.state.totalLike;
+      // });
+
       //  onMounted(() => {
       //     store.dispatch("getPerson");
-      //   });
-
-      //   const likes = computed(() => {
-      //     return store.state.totalLike;
       //   });
 
       //   const fakeLikes = computed(() => {
@@ -95,9 +95,9 @@
         totalLike: (state) => state.post.totalLike,
         userName: (state) => state.user.userName,
       }),
-      ...mapGetters({
-        fakeLikesSet: "post/fakeLikesSet",
-      }),
+      // ...mapGetters({
+      //   fakeLikesSet: "post/fakeLikesSet",
+      // }),
     },
     methods: {
       ...mapMutations({
